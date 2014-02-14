@@ -63,6 +63,16 @@ function (_) {
   });
 
   addFuncDef({
+    name: 'maxSeries',
+    category: categories.Combine
+  });
+
+  addFuncDef({
+    name: 'minSeries',
+    category: categories.Combine
+  });
+
+  addFuncDef({
     name: "alias",
     category: categories.Special,
     params: [ { name: "alias", type: 'string' } ],
@@ -117,9 +127,21 @@ function (_) {
     params: [ { name: "name", type: "string", } ],
     defaultParams: ['randomWalk']
   });
+  
+  addFuncDef({
+	  name: 'consolidateBy',
+	  category: categories.Special,
+	  params: [ { name: "consolidationFunc", type: "select", options: [ 'sum', 'average', 'min', 'max' ]}],
+      defaultParams: ['average']
+  });
 
   addFuncDef({
     name: 'countSeries',
+    category: categories.Special
+  });
+
+  addFuncDef({
+    name: 'drawAsInfinite',
     category: categories.Special
   });
 
@@ -186,6 +208,20 @@ function (_) {
   });
 
   addFuncDef({
+    name: 'maximumBelow',
+    category: categories.Filter,
+    params: [ { name: "n", type: "int", } ],
+    defaultParams: [25]
+  });
+
+  addFuncDef({
+    name: 'maximumAbove',
+    category: categories.Filter,
+    params: [ { name: "n", type: "int", } ],
+    defaultParams: [25]
+  });
+
+  addFuncDef({
     name: 'averageAbove',
     category: categories.Filter,
     params: [ { name: "n", type: "int", } ],
@@ -194,6 +230,20 @@ function (_) {
 
   addFuncDef({
     name: 'averageBelow',
+    category: categories.Filter,
+    params: [ { name: "n", type: "int", } ],
+    defaultParams: [25]
+  });
+
+  addFuncDef({
+    name: 'minimumBelow',
+    category: categories.Filter,
+    params: [ { name: "n", type: "int", } ],
+    defaultParams: [25]
+  });
+
+  addFuncDef({
+    name: 'minimumAbove',
     category: categories.Filter,
     params: [ { name: "n", type: "int", } ],
     defaultParams: [25]
