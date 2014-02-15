@@ -141,11 +141,6 @@ function (_) {
   });
 
   addFuncDef({
-    name: 'drawAsInfinite',
-    category: categories.Special
-  });
-
-  addFuncDef({
     name: 'constantLine',
     category: categories.Special,
     params: [ { name: "value", type: "int", } ],
@@ -154,6 +149,11 @@ function (_) {
 
   addFuncDef({
     name: 'cactiStyle',
+    category: categories.Special,
+  });
+
+  addFuncDef({
+    name: 'keepLastValue',
     category: categories.Special,
   });
 
